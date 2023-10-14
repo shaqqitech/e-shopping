@@ -28,16 +28,16 @@ const Products = () => {
       />
       <div
         ref={scrollContainer}
-        className="flex overflow-x-auto scrollbar-hide whitespace-nowrap scroll-smooth"
+        className="flex overflow-x-auto scrollbar-hide whitespace-nowrap scroll-smooth space-x-10"
         style={{ minWidth: "100%" }}
       >
         {productData.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center"
+            className="flex flex-col items-center text-center cursor-pointer"
           >
-            <div className={`w-48 h-48 ${item.bg} bg-cover bg-center ml-10 rounded-xl p-5`}>
-              <Image src={item.img} width={1} height={1} sizes="100%" className="w-full h-full bg-cover bg-no-repeat" />
+            <div className={`w-48 h-48 ${item.bg} bg-cover bg-center rounded-xl p-5`}>
+              <Image src={item.img} width={1} height={1} sizes="100%" className="w-full h-full bg-cover bg-no-repeat hover:scale-110 duration-150 transition-all ease-in-out" />
             </div>
             <div className="p-2 ml-5 font-semibold w-full">{item.desc}</div>
           </div>

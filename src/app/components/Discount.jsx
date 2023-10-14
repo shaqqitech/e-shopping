@@ -53,7 +53,7 @@ const Discount = () => {
                   width={1}
                   height={1}
                   sizes="100%"
-                  className="w-full h-full object-cover absolute top-0 left-0 p-5"
+                  className="w-full h-full object-cover absolute top-0 left-0 p-8 hover:scale-110 duration-150 transition-all ease-in-out"
                 />
               </div>
               <MdChevronRight

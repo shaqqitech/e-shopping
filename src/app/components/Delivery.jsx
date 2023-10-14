@@ -16,12 +16,13 @@ const Delivery = () => {
     ];
 
     return (
-        <main className='w-screen p-4 md:p-16 flex justify-center items-center bg-[#fefae0]'>
-            <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8'>
+        <main className='w-screen p-4 md:p-16 flex flex-col justify-center items-center bg-[#fefae0]'>
+            <h1 className='text-5xl font-bold my-8 w-full text-center'>Services We Provided</h1>
+            <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 '>
                 {data.map((item, ind) => {
                     return (
                         <div
-                            className={`border-2 w-full h-60 rounded-xl p-4 flex flex-col items-center justify-center ${item.bg} transition-all duration-300`}
+                            className={`border-2 w-full h-60 rounded-xl p-4 flex flex-col items-center justify-center ${item.bg} transition-all duration-300 hover:scale-105`}
                             key={ind}
                         >
                             <p className='text-4xl mb-2'>{React.createElement(item.icon)}</p>

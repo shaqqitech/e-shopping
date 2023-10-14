@@ -22,7 +22,7 @@ const Navbar = () => {
           <a href="#" className="hover:text-blue-500">About</a>
           <a href="#" className="hover:text-blue-500">Services</a>
           <a href="#" className="hover:text-blue-500">Contact</a>
-          <Link href={['#']} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
+          <Link href={'/signup'} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
           <Link href={['/']} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>0</span></Link>
         </div>
         <div className="md:hidden flex items-center justify-between space-x-3">

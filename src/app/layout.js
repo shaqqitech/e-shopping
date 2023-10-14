@@ -1,3 +1,4 @@
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import './globals.css'
 import { Poppins, Pacifico } from 'next/font/google'
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} scrollbar-hide`}>
         <Navbar />
         {children}
+        <Footer />
         </body>
     </html>
   )

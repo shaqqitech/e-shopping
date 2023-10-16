@@ -4,7 +4,7 @@ import {RiTwitterXFill} from 'react-icons/ri'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-gray-800 text-white relative">
       <div className="container mx-auto py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Section 1: Social Icons */}

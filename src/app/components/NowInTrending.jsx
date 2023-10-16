@@ -14,11 +14,11 @@ const NowInTrending = () => {
     ];
 
     return (
-        <div className="p-8 bg-[#fefae0] flex justify-center items-center flex-col w-screen">
+        <div className="px-8 py-24 bg-[#fefae0] flex justify-center items-center flex-col w-screen">
             <h1 className="text-5xl font-bold text-center mb-8">Now in Trending</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {data.map((item, ind) => (
-                    <div key={ind} className="bg-white shadow-md relative w-72 h-72 rounded-xl overflow-hidden ">
+                    <div key={ind} className=" relative w-72 h-80 shadow-xl rounded-xl overflow-hidden ">
                         <div className="relative w-full h-full">
                             <Image
                                 src={item.img}
@@ -26,10 +26,10 @@ const NowInTrending = () => {
                                 width={1}
                                 height={1}
                                 sizes='100%'
-                                className='absolute w-full h-full hover:scale-105 duration-150'
+                                className='absolute w-full h-5/6 rounded-xl hover:scale-105 duration-150'
                             />
                         </div>
-                        <div className='absolute bottom-2 left-4 text-black '>
+                        <div className='absolute bottom-3 flex  justify-between items-center w-full  px-6 text-black '>
                         <p className="text-lg font-semibold">{item.title}</p>
                         <p className="">{item.price}</p>
                         </div>

@@ -12,7 +12,7 @@ import Tshirt from "../../../public/assets/products/tshirt.png";
 
 const productsData = [
   { img: HeadPhones, bg: "bg-green-100", desc: "Headphones", link: '/headphones' },
-  { img: BedSheet, bg: "bg-green-300", desc: "Bed Sheet", link: '/' },
+  { img: BedSheet, bg: "bg-green-300", desc: "Bed Sheet", link: '/bedsheets' },
   { img: Cap, bg: "bg-blue-200", desc: "Cap", link: '/' },
   { img: GamingChair, bg: "bg-red-200", desc: "Gaming Chair", link: '/' },
   { img: Jeans, bg: "bg-teal-300", desc: "Jeans", link: '/' },

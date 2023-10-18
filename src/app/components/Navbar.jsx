@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#fefae0] sticky top-0 text-white p-5 z-10">
+    <nav className="bg-[#fefae0] sticky top-0 text-white p-5 z-[200]">
       <div className="container mx-auto flex justify-between items-center text-black">
         <Link href={'/'} className="text-3xl md:text-4xl font-bold text-black">E-Shopping</Link>
         <div className="hidden md:flex space-x-4">

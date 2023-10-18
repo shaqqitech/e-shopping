@@ -11,7 +11,7 @@ function DropDown() {
     {text: 'HeadPhones', link: '/headphones'},
     {text: 'Bed Sheets', link: '/bedsheets'},
     {text: 'Caps', link: '/caps'},
-    {text: 'Gaming Chairs', link: '/gaming-chai'},
+    {text: 'Gaming Chairs', link: '/gaming-chairs'},
     {text: 'Jeans', link: '/jeans-pants'},
     {text: 'T-Shirts', link: '/t-shirts'},
     {text: 'Beds', link: '/bed'},

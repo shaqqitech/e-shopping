@@ -13,15 +13,15 @@ import Tshirt from "../../../public/assets/products/tshirt.png";
 const productsData = [
   { img: HeadPhones, bg: "bg-green-100", desc: "Headphones", link: '/headphones' },
   { img: BedSheet, bg: "bg-green-300", desc: "Bed Sheet", link: '/bedsheets' },
-  { img: Cap, bg: "bg-blue-200", desc: "Cap", link: '/' },
-  { img: GamingChair, bg: "bg-red-200", desc: "Gaming Chair", link: '/' },
-  { img: Jeans, bg: "bg-teal-300", desc: "Jeans", link: '/' },
-  { img: Tshirt, bg: "bg-pink-300", desc: "T-Shirt" },
-  { img: Bed, bg: "bg-blue-500", desc: "Bed", link: '/' },
-    { img: MakeupBox, bg: "bg-indigo-200", desc: "Makeup Box", link: '/' },
-    { img: Oven, bg: "bg-green-400", desc: "Oven", link: '/' },
-    { img: Pillow, bg: "bg-yellow-300", desc: "Pillow", link: '/' },
-    { img: Refrigerator, bg: "bg-red-100", desc: "Refrigerator", link: '/' },
+  { img: Cap, bg: "bg-blue-200", desc: "Cap", link: '/caps' },
+  { img: GamingChair, bg: "bg-red-200", desc: "Gaming Chair", link: '/gaming-chairs' },
+  { img: Jeans, bg: "bg-teal-300", desc: "Jeans", link: '/jeans-pants' },
+  { img: Tshirt, bg: "bg-pink-300", desc: "T-Shirt", link: '/t-shirts'},
+  { img: Bed, bg: "bg-blue-500", desc: "Bed", link: '/bed' },
+    { img: MakeupBox, bg: "bg-indigo-200", desc: "Makeup Box", link: '/makeup-box' },
+    { img: Oven, bg: "bg-green-400", desc: "Oven", link: '/oven' },
+    { img: Pillow, bg: "bg-yellow-300", desc: "Pillow", link: '/pillow' },
+    { img: Refrigerator, bg: "bg-red-100", desc: "Refrigerator", link: '/refrigerator' },
   ];
 
   export default productsData

@@ -3,6 +3,7 @@ import React, { useState } from "react";;
 import Image from "next/image";
 import DropDown from "./Dropdown";
 
+
 const ProductPage = ({data, bg}) => {
   // Create a state to manage the quantity for each product
   // const [productQuantities, setProductQuantities] = useState(Array(headphones.length).fill(0));
@@ -20,6 +21,7 @@ const ProductPage = ({data, bg}) => {
   //     setProductQuantities(newQuantities);
   //   }
   // };
+
 
   return (
     <>

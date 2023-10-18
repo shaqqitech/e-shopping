@@ -2,7 +2,7 @@ import React from 'react'
 import ProductPage from '../components/ProductPage'
 import bed from '../Data/bed'
 
-const TShirts = () => {
+const Bed = () => {
   return (
     <div>
         <ProductPage data={bed} bg={'bg-blue-500'}  />
@@ -10,4 +10,4 @@ const TShirts = () => {
   )
 }
 
-export default TShirts
+export default Bed

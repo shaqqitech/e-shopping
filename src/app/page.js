@@ -6,7 +6,7 @@ import Products from "./components/Products";
 
 export default function Home() {
   return (
-    <main className="w-screen">
+    <main className="w-screen min-h-screen">
       <Main />
       <Products />
       <Discount />

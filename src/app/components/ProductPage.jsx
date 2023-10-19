@@ -2,25 +2,18 @@
 import React, { useState } from "react";;
 import Image from "next/image";
 import DropDown from "./Dropdown";
+import { useDispatch } from "react-redux";
+import { add } from "@/store/cartSlice";
 
 
 const ProductPage = ({data, bg}) => {
-  // Create a state to manage the quantity for each product
-  // const [productQuantities, setProductQuantities] = useState(Array(headphones.length).fill(0));
 
-  // const increaseQuantity = (index) => {
-  //   const newQuantities = [...productQuantities];
-  //   newQuantities[index]++;
-  //   setProductQuantities(newQuantities);
-  // };
+  const dispatch = useDispatch()
 
-  // const decreaseQuantity = (index) => {
-  //   if (productQuantities[index] > 0) {
-  //     const newQuantities = [...productQuantities];
-  //     newQuantities[index]--;
-  //     setProductQuantities(newQuantities);
-  //   }
-  // };
+  const addToCart = (item) =>{
+    dispatch(add(item));
+
+  }
 
 
   return (
@@ -51,23 +44,8 @@ const ProductPage = ({data, bg}) => {
                     </p>
                     <p className="text-sm font-semibold text-gray-500">Rating: {item.rating}</p>
                   </div>
-                  <button className={`w-28 h-10 ${bg} rounded-xl text-sm font-semibold border-2`}>Add To Cart</button>
+                  <button className={`w-28 h-10 ${bg} rounded-xl text-sm font-semibold border-2`} onClick={()=>addToCart(item)}>Add To Cart</button>
 
-                  {/* <div className="flex justify-center items-center space-x-2">
-                    <p
-                      onClick={() => decreaseQuantity(index)}
-                      className="cursor-pointer font-semibold text-2xl"
-                    >
-                      -
-                    </p>
-                    <h1>{productQuantities[index]}</h1>
-                    <p
-                      onClick={() => increaseQuantity(index)}
-                      className="cursor-pointer font-semibold text-2xl"
-                    >
-                      +
-                    </p>
-                  </div> */}
                 </div>
               </div>
             );

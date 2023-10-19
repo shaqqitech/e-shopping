@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {BiSolidShoppingBag} from 'react-icons/bi'
 import {BsFillPersonFill} from 'react-icons/bs'
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -12,6 +13,8 @@ const Navbar = () => {
     const toggle = isMobile
     setIsMobile(!toggle);
   };
+
+  const items = useSelector(state => state.cart)
 
   return (
     <nav className="bg-[#fefae0] sticky top-0 text-white p-5 z-[200]">
@@ -23,7 +26,7 @@ const Navbar = () => {
           <a href="#" className="hover:text-blue-500">Services</a>
           <a href="#" className="hover:text-blue-500">Contact</a>
           <Link href={'/signup'} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
-          <Link href={['/']} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>0</span></Link>
+          <Link href={'/cart'} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>{items.length}</span></Link>
         </div>
         <div className="md:hidden flex items-center justify-between space-x-3">
           <div onClick={toggleMobileMenu}>
@@ -34,7 +37,7 @@ const Navbar = () => {
             )}
           </div>
             <Link href={['#']} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
-            <Link href={['/']} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>0</span></Link>
+            <Link href={'/cart'} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>{items.length}</span></Link>
         </div>
       </div>
       {isMobile && (

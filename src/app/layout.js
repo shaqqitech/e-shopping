@@ -1,3 +1,4 @@
+import ReduxProvider from "@/store/Provider";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
@@ -24,9 +25,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} scrollbar-hide`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

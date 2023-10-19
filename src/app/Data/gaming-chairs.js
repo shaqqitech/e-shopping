@@ -16,22 +16,22 @@ import Chair15 from '../../../public/assets/chairs/gc15.png';
 import Chair16 from '../../../public/assets/chairs/gc16.png';
 
 const chairs = [
-    {id: "1", img: Chair1, price: '10', rating: '4.5'},
-    {id: "2", img: Chair2, price: '15', rating: '4.0'},
-    {id: "3", img: Chair3, price: '45', rating: '4.7'},
-    {id: "4", img: Chair4, price: '5', rating: '3.9'},
-    {id: "5", img: Chair5, price: '25', rating: '4.0'},
-    {id: "6", img: Chair6, price: '20', rating: '4.1'},
-    {id: "7", img: Chair7, price: '22', rating: '3.9'},
-    {id: "8", img: Chair8, price: '28', rating: '4.0'},
-    {id: "9", img: Chair9, price: '58', rating: '4.8'},
-    {id: "10", img: Chair10, price: '15', rating: '4.5'},
-    {id: "11", img: Chair11, price: '65', rating: '4.9'},
-    {id: "12", img: Chair12, price: '10', rating: '4.2'},
-    {id: "13", img: Chair13, price: '20', rating: '4.5'},
-    {id: "14", img: Chair14, price: '28', rating: '4.0'},
-    {id: "15", img: Chair15, price: '15', rating: '3.7'},
-    {id: "16", img: Chair16, price: '35', rating: '4.1'},
+    {id: "1", img: Chair1, price: '110', rating: '4.5'},
+    {id: "2", img: Chair2, price: '115', rating: '4.0'},
+    {id: "3", img: Chair3, price: '145', rating: '4.7'},
+    {id: "4", img: Chair4, price: '115', rating: '3.9'},
+    {id: "5", img: Chair5, price: '225', rating: '4.0'},
+    {id: "6", img: Chair6, price: '220', rating: '4.1'},
+    {id: "7", img: Chair7, price: '122', rating: '3.9'},
+    {id: "8", img: Chair8, price: '128', rating: '4.0'},
+    {id: "9", img: Chair9, price: '158', rating: '4.8'},
+    {id: "10", img: Chair10, price: '155', rating: '4.5'},
+    {id: "11", img: Chair11, price: '165', rating: '4.9'},
+    {id: "12", img: Chair12, price: '110', rating: '4.2'},
+    {id: "13", img: Chair13, price: '210', rating: '4.5'},
+    {id: "14", img: Chair14, price: '128', rating: '4.0'},
+    {id: "15", img: Chair15, price: '175', rating: '3.7'},
+    {id: "16", img: Chair16, price: '235', rating: '4.1'},
 ]
 
 export default chairs;

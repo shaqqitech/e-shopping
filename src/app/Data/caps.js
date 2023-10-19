@@ -1,5 +1,5 @@
 import cap1 from '../../../public/assets/caps/cap1.png';
-import cap2 from '../../../public/assets/caps/cap2.png';
+import cap2 from '../../../public/assets/caps/cap12.png';
 import cap3 from '../../../public/assets/caps/cap3.png';
 import cap4 from '../../../public/assets/caps/cap4.png';
 import cap5 from '../../../public/assets/caps/cap5.png';

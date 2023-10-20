@@ -17,9 +17,9 @@ const Navbar = () => {
   const items = useSelector(state => state.cart)
 
   return (
-    <nav className="bg-[#fefae0] sticky top-0 text-white p-5 z-[200]">
-      <div className="container mx-auto flex justify-between items-center text-black">
-        <Link href={'/'} className="text-3xl md:text-4xl font-bold text-black">E-Shopping</Link>
+    <nav className=" sticky top-0 p-5 z-[200] dark:bg-gray-800 dark:text-white">
+      <div className="container mx-auto flex justify-between items-center text-black dark:bg-gray-800 dark:text-white">
+        <Link href={'/'} className="text-3xl md:text-4xl font-bold text-black ">E-Shopping</Link>
         <div className="hidden md:flex space-x-4">
           <a href="#" className="hover:text-blue-500">Home</a>
           <a href="#" className="hover:text-blue-500">About</a>
@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
       </div>
       {isMobile && (
-        <div className="md:hidden text-center flex justify-center items-center flex-col absolute w-24 h-44 top-16 right-5 rounded-xl bg-gray-700">
+        <div className="md:hidden text-center flex justify-center items-center flex-col absolute w-24 h-44 top-16 right-5 rounded-xl bg-gray-700 dark:bg-gray-800 dark:text-white">
           <a href="#" className="block py-2 hover:bg-gray-600">Home</a>
           <a href="#" className="block py-2 hover:bg-gray-600">About</a>
           <a href="#" className="block py-2 hover:bg-gray-600">Services</a>

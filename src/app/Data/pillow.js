@@ -16,22 +16,22 @@ import Pillow15 from '../../../public/assets/pillow/pl15.png';
 import Pillow16 from '../../../public/assets/pillow/pl16.png';
 
 const pillow = [
-    {id: "1", img: Pillow1, price: '10', rating: '4.5'},
-    {id: "2", img: Pillow2, price: '15', rating: '4.0'},
-    {id: "3", img: Pillow3, price: '45', rating: '4.7'},
-    {id: "4", img: Pillow4, price: '5', rating: '3.9'},
-    {id: "5", img: Pillow5, price: '25', rating: '4.0'},
-    {id: "6", img: Pillow6, price: '20', rating: '4.1'},
-    {id: "7", img: Pillow7, price: '22', rating: '3.9'},
-    {id: "8", img: Pillow8, price: '28', rating: '4.0'},
-    {id: "9", img: Pillow9, price: '58', rating: '4.8'},
-    {id: "10", img: Pillow10, price: '15', rating: '4.5'},
-    {id: "11", img: Pillow11, price: '65', rating: '4.9'},
-    {id: "12", img: Pillow12, price: '10', rating: '4.2'},
-    {id: "13", img: Pillow13, price: '20', rating: '4.5'},
-    {id: "14", img: Pillow14, price: '28', rating: '4.0'},
-    {id: "15", img: Pillow15, price: '15', rating: '3.7'},
-    {id: "16", img: Pillow16, price: '35', rating: '4.1'},
+    {id: "129", img: Pillow1, price: '10', rating: '4.5'},
+    {id: "130", img: Pillow2, price: '15', rating: '4.0'},
+    {id: "131", img: Pillow3, price: '45', rating: '4.7'},
+    {id: "132", img: Pillow4, price: '5', rating: '3.9'},
+    {id: "133", img: Pillow5, price: '25', rating: '4.0'},
+    {id: "134", img: Pillow6, price: '20', rating: '4.1'},
+    {id: "135", img: Pillow7, price: '22', rating: '3.9'},
+    {id: "136", img: Pillow8, price: '28', rating: '4.0'},
+    {id: "137", img: Pillow9, price: '58', rating: '4.8'},
+    {id: "138", img: Pillow10, price: '15', rating: '4.5'},
+    {id: "139", img: Pillow11, price: '65', rating: '4.9'},
+    {id: "140", img: Pillow12, price: '10', rating: '4.2'},
+    {id: "141", img: Pillow13, price: '20', rating: '4.5'},
+    {id: "142", img: Pillow14, price: '28', rating: '4.0'},
+    {id: "143", img: Pillow15, price: '15', rating: '3.7'},
+    {id: "144", img: Pillow16, price: '35', rating: '4.1'},
 ]
 
 export default pillow;

@@ -16,22 +16,22 @@ import Headphone15 from '../../../public/assets/Headphones/hp15.png';
 import Headphone16 from '../../../public/assets/Headphones/hp16.png';
 
 const headphones = [
-    {id: "1", img: Headphone1, price: '10', rating: '4.5'},
-    {id: "2", img: Headphone2, price: '15', rating: '4.0'},
-    {id: "3", img: Headphone3, price: '45', rating: '4.7'},
-    {id: "4", img: Headphone4, price: '5', rating: '3.9'},
-    {id: "5", img: Headphone5, price: '25', rating: '4.0'},
-    {id: "6", img: Headphone6, price: '20', rating: '4.1'},
-    {id: "7", img: Headphone7, price: '22', rating: '3.9'},
-    {id: "8", img: Headphone8, price: '28', rating: '4.0'},
-    {id: "9", img: Headphone9, price: '58', rating: '4.8'},
-    {id: "10", img: Headphone10, price: '15', rating: '4.5'},
-    {id: "11", img: Headphone11, price: '65', rating: '4.9'},
-    {id: "12", img: Headphone12, price: '10', rating: '4.2'},
-    {id: "13", img: Headphone13, price: '20', rating: '4.5'},
-    {id: "14", img: Headphone14, price: '28', rating: '4.0'},
-    {id: "15", img: Headphone15, price: '15', rating: '3.7'},
-    {id: "16", img: Headphone16, price: '35', rating: '4.1'},
+    {id: "65", img: Headphone1, price: '10', rating: '4.5'},
+    {id: "66", img: Headphone2, price: '15', rating: '4.0'},
+    {id: "67", img: Headphone3, price: '45', rating: '4.7'},
+    {id: "68", img: Headphone4, price: '5', rating: '3.9'},
+    {id: "69", img: Headphone5, price: '25', rating: '4.0'},
+    {id: "70", img: Headphone6, price: '20', rating: '4.1'},
+    {id: "71", img: Headphone7, price: '22', rating: '3.9'},
+    {id: "72", img: Headphone8, price: '28', rating: '4.0'},
+    {id: "73", img: Headphone9, price: '58', rating: '4.8'},
+    {id: "74", img: Headphone10, price: '15', rating: '4.5'},
+    {id: "75", img: Headphone11, price: '65', rating: '4.9'},
+    {id: "76", img: Headphone12, price: '10', rating: '4.2'},
+    {id: "77", img: Headphone13, price: '20', rating: '4.5'},
+    {id: "78", img: Headphone14, price: '28', rating: '4.0'},
+    {id: "79", img: Headphone15, price: '15', rating: '3.7'},
+    {id: "80", img: Headphone16, price: '35', rating: '4.1'},
 ]
 
 export default headphones;

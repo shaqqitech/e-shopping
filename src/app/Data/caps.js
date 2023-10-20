@@ -16,22 +16,22 @@ import cap15 from '../../../public/assets/caps/cap15.png';
 import cap16 from '../../../public/assets/caps/cap16.png';
 
 const caps = [
-    {id: "1", img: cap1, price: '10', rating: '4.5'},
-    {id: "2", img: cap2, price: '15', rating: '4.0'},
-    {id: "3", img: cap3, price: '45', rating: '4.7'},
-    {id: "4", img: cap4, price: '5', rating: '3.9'},
-    {id: "5", img: cap5, price: '25', rating: '4.0'},
-    {id: "6", img: cap6, price: '20', rating: '4.1'},
-    {id: "7", img: cap7, price: '22', rating: '3.9'},
-    {id: "8", img: cap8, price: '28', rating: '4.0'},
-    {id: "9", img: cap9, price: '58', rating: '4.8'},
-    {id: "10", img: cap10, price: '15', rating: '4.5'},
-    {id: "11", img: cap11, price: '65', rating: '4.9'},
-    {id: "12", img: cap12, price: '10', rating: '4.2'},
-    {id: "13", img: cap13, price: '20', rating: '4.5'},
-    {id: "14", img: cap14, price: '28', rating: '4.0'},
-    {id: "15", img: cap15, price: '15', rating: '3.7'},
-    {id: "16", img: cap16, price: '35', rating: '4.1'},
+    {id: "33", img: cap1, price: '10', rating: '4.5'},
+    {id: "34", img: cap2, price: '15', rating: '4.0'},
+    {id: "35", img: cap3, price: '45', rating: '4.7'},
+    {id: "36", img: cap4, price: '5', rating: '3.9'},
+    {id: "37", img: cap5, price: '25', rating: '4.0'},
+    {id: "38", img: cap6, price: '20', rating: '4.1'},
+    {id: "39", img: cap7, price: '22', rating: '3.9'},
+    {id: "40", img: cap8, price: '28', rating: '4.0'},
+    {id: "41", img: cap9, price: '58', rating: '4.8'},
+    {id: "42", img: cap10, price: '15', rating: '4.5'},
+    {id: "43", img: cap11, price: '65', rating: '4.9'},
+    {id: "44", img: cap12, price: '10', rating: '4.2'},
+    {id: "45", img: cap13, price: '20', rating: '4.5'},
+    {id: "46", img: cap14, price: '28', rating: '4.0'},
+    {id: "47", img: cap15, price: '15', rating: '3.7'},
+    {id: "48", img: cap16, price: '35', rating: '4.1'},
 ]
 
 export default caps;

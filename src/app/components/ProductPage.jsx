@@ -1,20 +1,23 @@
 'use client'
-import React, { useState } from "react";;
+import React from "react";
 import Image from "next/image";
 import DropDown from "./Dropdown";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/store/cartSlice";
 
+const ProductPage = ({ data, bg }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
-const ProductPage = ({data, bg}) => {
+  const isItemInCart = (itemId) => {
+    return cart.some((cartItem) => cartItem.id === itemId);
+  };
 
-  const dispatch = useDispatch()
-
-  const addToCart = (item) =>{
-    dispatch(add(item));
-
-  }
-
+  const addToCart = (item) => {
+    if (!isItemInCart(item.id)) {
+      dispatch(add(item));
+    }
+  };
 
   return (
     <>
@@ -24,8 +27,12 @@ const ProductPage = ({data, bg}) => {
         </div>
         <div className="w-full min-h-full grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {data.map((item, index) => {
+            const addedToCart = isItemInCart(item.id);
             return (
-              <div className="flex justify-center items-center flex-col space-y-5 rounded-xl shadow-md" key={index}>
+              <div
+                className="flex justify-center items-center flex-col space-y-5 rounded-xl shadow-md"
+                key={index}
+              >
                 <div className={`w-60 h-60 rounded-xl ${bg}`}>
                   <Image
                     src={item.img}
@@ -42,10 +49,16 @@ const ProductPage = ({data, bg}) => {
                       <span className="text-sm">$</span>
                       {item.price}
                     </p>
-                    <p className="text-sm font-semibold text-gray-500">Rating: {item.rating}</p>
+                    <p className="text-sm font-semibold text-gray-500">
+                      Rating: {item.rating}
+                    </p>
                   </div>
-                  <button className={`w-28 h-10 ${bg} rounded-xl text-sm font-semibold border-2`} onClick={()=>addToCart(item)}>Add To Cart</button>
-
+                  <button
+                    className={`w-28 h-10 ${bg} rounded-xl text-sm font-semibold border-2`}
+                    onClick={() => addToCart(item)}
+                  >
+                    {addedToCart ? "ADDED" : "Add to cart"}
+                  </button>
                 </div>
               </div>
             );

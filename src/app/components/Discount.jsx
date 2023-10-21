@@ -34,7 +34,7 @@ const Discount = () => {
     <>
       <main className="w-screen max-1/2 md:h-96 px-7 py-16 flex items-center justify-center">
         <div className=" flex flex-col space-y-10 md:flex-row justify-around items-center relative">
-          <p className="md:w-1/2 py-5 rounded-xl bg-white border-2 flex justify-center items-center text-center h-full text-4xl md:text-6xl font-semibold md:mr-4">
+          <p className="md:w-1/2 py-5 rounded-xl bg-white dark:bg-gray-800 border-2 flex justify-center items-center text-center h-full text-4xl md:text-6xl font-semibold md:mr-4">
             {currentDiscountItem.disc}
           </p>
           <div className="md:w-1/3 flex justify-center items-center h-full">

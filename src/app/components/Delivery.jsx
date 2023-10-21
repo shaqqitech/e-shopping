@@ -22,7 +22,7 @@ const Delivery = () => {
                 {data.map((item, ind) => {
                     return (
                         <div
-                            className={`border-2 w-full h-60 rounded-xl p-4 flex flex-col items-center justify-center ${item.bg} transition-all duration-300 hover:scale-105`}
+                            className={`border-2 w-full h-60 rounded-xl p-4 flex flex-col items-center justify-center ${item.bg} transition-all duration-300 hover:scale-105 dark:text-black`}
                             key={ind}
                         >
                             <p className='text-4xl mb-2'>{React.createElement(item.icon)}</p>

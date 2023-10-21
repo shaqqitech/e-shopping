@@ -29,7 +29,7 @@ const NowInTrending = () => {
                                 className='absolute w-full h-5/6 rounded-xl hover:scale-105 duration-150'
                             />
                         </div>
-                        <div className='absolute bottom-3 flex  justify-between items-center w-full  px-6 text-black '>
+                        <div className='absolute bottom-3 flex  justify-between items-center w-full  px-6 text-black dark:text-white '>
                         <p className="text-lg font-semibold">{item.title}</p>
                         <p className="">{item.price}</p>
                         </div>

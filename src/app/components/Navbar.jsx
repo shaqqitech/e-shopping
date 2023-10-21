@@ -17,9 +17,9 @@ const Navbar = () => {
   const items = useSelector(state => state.cart)
 
   return (
-    <nav className=" sticky top-0 p-5 z-[200] dark:bg-gray-800 dark:text-white">
+    <nav className=" sticky top-0 p-5 z-[200] dark:bg-gray-800 dark:text-white bg-[#fefae0] shadow-gray-300 shadow-sm">
       <div className="container mx-auto flex justify-between items-center text-black dark:bg-gray-800 dark:text-white">
-        <Link href={'/'} className="text-3xl md:text-4xl font-bold text-black ">E-Shopping</Link>
+        <Link href={'/'} className="text-3xl md:text-4xl font-bold text-black dark:text-white ">E-Shopping</Link>
         <div className="hidden md:flex space-x-4">
           <a href="#" className="hover:text-blue-500">Home</a>
           <a href="#" className="hover:text-blue-500">About</a>

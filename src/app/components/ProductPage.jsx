@@ -21,7 +21,7 @@ const ProductPage = ({ data, bg }) => {
 
   return (
     <>
-      <main className="w-screen px-8 py-16 bg-[#fefae0] flex justify-center items-center relative">
+      <main className="w-screen px-8 py-16 bg-[#fefae0] dark:bg-gray-900 flex justify-center items-center relative">
         <div className="absolute top-2 right-5 z-[100]">
           <DropDown />
         </div>
@@ -30,7 +30,7 @@ const ProductPage = ({ data, bg }) => {
             const addedToCart = isItemInCart(item.id);
             return (
               <div
-                className="flex justify-center items-center flex-col space-y-5 rounded-xl shadow-md"
+                className="flex justify-center items-center flex-col space-y-5 rounded-xl shadow-md dark:border-2 dark:border-white"
                 key={index}
               >
                 <div className={`w-60 h-60 rounded-xl ${bg}`}>
@@ -54,7 +54,7 @@ const ProductPage = ({ data, bg }) => {
                     </p>
                   </div>
                   <button
-                    className={`w-28 h-10 ${bg} rounded-xl text-sm font-semibold border-2`}
+                    className={`w-28 h-10 ${bg} rounded-xl dark:text-black text-sm font-semibold border-2`}
                     onClick={() => addToCart(item)}
                   >
                     {addedToCart ? "ADDED" : "Add to cart"}

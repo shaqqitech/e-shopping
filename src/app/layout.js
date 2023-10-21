@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import { Providers } from "./Provider";
+import ThemeChanger from "./ThemeChanger";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,12 +25,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className} scrollbar-hide`}>
         <ReduxProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <Providers>
+            <Navbar />
+            {children}
+            <Footer />
+            <ThemeChanger />
+          </Providers>
         </ReduxProvider>
       </body>
     </html>

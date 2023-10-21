@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from 'react';
 
-function DropDown() {
+function DropDown({title}) {
   const [selectCategory, setSelectedCategory] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -55,7 +55,7 @@ function DropDown() {
             {selectCategory ? (
               <span className='text-black'>{selectCategory}</span>
             ) : (
-              <span className="text-black dark:text-white w-full">Change Category</span>
+              <span className="text-black dark:text-white w-full">{title}</span>
             )}
             <svg
               className={`ml-2 h-5 w-5 transition-transform transform ${

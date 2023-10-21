@@ -23,7 +23,7 @@ const ProductPage = ({ data, bg }) => {
     <>
       <main className="w-screen px-8 py-16 bg-[#fefae0] dark:bg-gray-900 flex justify-center items-center relative">
         <div className="absolute top-2 right-5 z-[100]">
-          <DropDown />
+          <DropDown title={'Change Category'} />
         </div>
         <div className="w-full min-h-full grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {data.map((item, index) => {

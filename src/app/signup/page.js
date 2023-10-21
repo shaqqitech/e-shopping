@@ -25,18 +25,18 @@ function SignUp() {
   };
 
   return (
-    <div className="min-h-2/3 p-10 flex items-center justify-center  bg-[#fefae0]">
+    <div className="min-h-2/3 p-10 flex items-center justify-center  bg-[#fefae0] dark:bg-gray-900">
       <form
         className="p-8 rounded shadow-lg w-96 border-2"
         onSubmit={handleSubmit}
       >
         <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+          <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="username">
             Username
           </label>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             id="username"
             name="username"
@@ -46,11 +46,11 @@ function SignUp() {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="email">
             Email
           </label>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             type="email"
             id="email"
             name="email"
@@ -60,11 +60,11 @@ function SignUp() {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+          <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="password">
             Password
           </label>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             id="password"
             name="password"
@@ -74,11 +74,11 @@ function SignUp() {
           />
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
+          <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="confirmPassword">
             Confirm Password
           </label>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             id="confirmPassword"
             name="confirmPassword"

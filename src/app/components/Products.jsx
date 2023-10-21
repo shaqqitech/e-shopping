@@ -21,7 +21,7 @@ const Products = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden relative py-10 px-5">
+    <div className="w-full overflow-hidden relative py-10 px-5 bg-[#fefae0] dark:bg-gray-900">
       <h1 className="w-full h-10 text-center text-green-600 font-semibold">TIP: Click on the Box for more products</h1>
       <MdChevronLeft
         size={40}

@@ -36,7 +36,7 @@ const Navbar = () => {
               <FaBars className="text-2xl cursor-pointer" />
             )}
           </div>
-            <Link href={['/signup']} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
+            <Link href={'/signup'} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
             <Link href={'/cart'} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>{items.length}</span></Link>
         </div>
       </div>

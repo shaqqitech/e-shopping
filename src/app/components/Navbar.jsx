@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4">
           <a href={'/'} className="hover:text-blue-500">Home</a>
           <a href={'/about'} className="hover:text-blue-500">About</a>
-          <a href="#" className="hover:text-blue-500">Services</a>
+          <a href={'/headphones'} className="hover:text-blue-500">Products</a>
           <a href={'/contact'} className="hover:text-blue-500">Contact</a>
           <Link href={'/signup'} className='flex font-bold'><BsFillPersonFill size={20} /></Link>
           <Link href={'/cart'} className='flex font-bold'><BiSolidShoppingBag size={20} /> <span>{items.length}</span></Link>
@@ -42,11 +42,11 @@ const Navbar = () => {
         </div>
       </div>
       {isMobile && (
-        <div className="md:hidden text-center flex justify-center items-center flex-col absolute w-24 h-44 top-16 right-5 rounded-xl bg-gray-900 text-white ">
-          <a href={'/'} className="block py-2 hover:bg-gray-600">Home</a>
-          <a href={'/about'} className="block py-2 hover:bg-gray-600">About</a>
-          <a href="#" className="block py-2 hover:bg-gray-600">Services</a>
-          <a href={'/contact'} className="block py-2 hover:bg-gray-600">Contact</a>
+        <div className="md:hidden text-center flex justify-center items-center flex-col absolute w-28 h-44 top-16 right-5 rounded-xl bg-gray-900 text-white ">
+          <a href={'/'} className="block py-2 w-full hover:bg-gray-600">Home</a>
+          <a href={'/about'} className="block py-2 w-full hover:bg-gray-600">About</a>
+          <a href={'/headphones'} className="block py-2 w-full hover:bg-gray-600">Products</a>
+          <a href={'/contact'} className="block py-2 w-full hover:bg-gray-600">Contact</a>
         </div>
       )}
     </nav>

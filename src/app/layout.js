@@ -6,6 +6,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Providers } from "./Provider";
 import ThemeChanger from "./ThemeChanger";
+import { AuthContextProvider } from "@/context/AuthContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,14 +28,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className} scrollbar-hide`}>
-        <ReduxProvider>
-          <Providers>
-            <Navbar />
-            {children}
-            <Footer />
-            <ThemeChanger />
-          </Providers>
-        </ReduxProvider>
+        <AuthContextProvider>
+          <ReduxProvider>
+            <Providers>
+              <Navbar />
+              {children}
+              <Footer />
+              <ThemeChanger />
+            </Providers>
+          </ReduxProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );

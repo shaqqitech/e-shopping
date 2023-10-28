@@ -1,27 +1,24 @@
 'use client'
 import Link from "next/link";
 import React, { useState } from "react";
+import { UserAuth } from "@/context/AuthContext";
+import { useRouter } from 'next/navigation'
 
 function SignUp() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {user, signUp} = UserAuth()
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const router = useRouter()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can add your form submission logic.
-    console.log(formData);
+   try {
+    await signUp(email, password)
+    router.push('/login')
+   } catch (error) {
+    console.log(error);
+   }
   };
 
   return (
@@ -31,20 +28,7 @@ function SignUp() {
         onSubmit={handleSubmit}
       >
         <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
-        <div className="mb-4">
-          <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="username">
-            Username
-          </label>
-          <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
+ 
         <div className="mb-4">
           <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="email">
             Email
@@ -54,9 +38,8 @@ function SignUp() {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
           />
         </div>
         <div className="mb-4">
@@ -68,25 +51,11 @@ function SignUp() {
             type="password"
             id="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
           />
         </div>
-        <div className="mb-6">
-          <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="confirmPassword">
-            Confirm Password
-          </label>
-          <input
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
+  
         <div className="flex items-center justify-between">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

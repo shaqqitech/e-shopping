@@ -1,25 +1,24 @@
 'use client'
+import { UserAuth } from "@/context/AuthContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 function LogIn() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {user, logIn} = UserAuth()
+  const router = useRouter()
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can add your login logic.
-    console.log(formData);
+    try {
+      await logIn(email, password)
+      router.push('/')
+    } catch (error) {
+      console.log(error);
+    }
+
   };
 
   return (
@@ -38,8 +37,8 @@ function LogIn() {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
             required
           />
         </div>
@@ -52,8 +51,8 @@ function LogIn() {
             type="password"
             id="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
             required
           />
         </div>

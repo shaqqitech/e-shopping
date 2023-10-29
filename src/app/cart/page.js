@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DropDown from "../components/Dropdown";
+import CheckoutPage from "../components/CheckoutPage";
 
 const Cart = () => {
   const [totalQuantities, setTotalQuantities] = useState(0);
@@ -132,6 +133,9 @@ const Cart = () => {
             </h1>
           </div>
         </div>
+      <div className="mt-10">
+          {totalQuantities > 0 && <CheckoutPage />}
+      </div>
       </div>
     </main>
   );

@@ -3,6 +3,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { FaUser, FaEnvelope, FaPhone, FaCashRegister, FaCreditCard, FaMapMarkerAlt, FaCity, FaAddressCard } from 'react-icons/fa';
+import Link from 'next/link';
 
 const CheckoutPage = () => {
   const formik = useFormik({
@@ -186,12 +187,12 @@ const CheckoutPage = () => {
           </div>
         </div>
 
-        <button
-          type="submit"
-          className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 w-full"
+        <Link
+          href={'/cart/placeorder'}
+          className=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 w-full grid place-content-center"
         >
           Place Order
-        </button>
+        </Link>
       </form>
     </div>
   );

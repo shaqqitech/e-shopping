@@ -197,6 +197,7 @@ const Cart = () => {
             <div className="mt-10">
               {/*Show the Checkout page component if the length of the cart item is more thab 0*/}
               {totalQuantities > 0 && <CheckoutPage />}
+              
             </div>
           </div>
         </div>

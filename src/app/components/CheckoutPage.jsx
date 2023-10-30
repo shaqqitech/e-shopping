@@ -33,7 +33,7 @@ const CheckoutPage = () => {
 
   return (
     <div className="max-w-screen-lg mx-auto p-4">
-      <form onSubmit={formik.handleSubmit} className="bg-[#fefae0] dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+      <form onSubmit={formik.handleSubmit} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
         <div className="mb-4 space-y-2">
           <label htmlFor="fullName" className="flex items-center">
@@ -46,7 +46,7 @@ const CheckoutPage = () => {
             value={formik.values.fullName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.fullName && formik.errors.fullName && (
             <div className="text-red-500">{formik.errors.fullName}</div>
@@ -63,7 +63,7 @@ const CheckoutPage = () => {
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.email && formik.errors.email && (
             <div className="text-red-500">{formik.errors.email}</div>
@@ -80,7 +80,7 @@ const CheckoutPage = () => {
             value={formik.values.phoneNumber}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.phoneNumber && formik.errors.phoneNumber && (
             <div className="text-red-500">{formik.errors.phoneNumber}</div>
@@ -97,7 +97,7 @@ const CheckoutPage = () => {
             value={formik.values.province}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.province && formik.errors.province && (
             <div className="text-red-500">{formik.errors.province}</div>
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
             value={formik.values.city}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.city && formik.errors.city && (
             <div className="text-red-500">{formik.errors.city}</div>
@@ -131,7 +131,7 @@ const CheckoutPage = () => {
             value={formik.values.postalCode}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.postalCode && formik.errors.postalCode && (
             <div className="text-red-500">{formik.errors.postalCode}</div>
@@ -148,7 +148,7 @@ const CheckoutPage = () => {
             value={formik.values.deliveryAddress}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="w-full border p-2 rounded-md"
+            className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
           {formik.touched.deliveryAddress && formik.errors.deliveryAddress && (
             <div className="text-red-500">{formik.errors.deliveryAddress}</div>

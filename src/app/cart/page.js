@@ -62,14 +62,14 @@ const Cart = () => {
   return (
     <main className="w-full p-5 md:p-10 space-y-5 bg-[#fefae0] dark:bg-gray-900 relative">
       <div className="absolute top-2 right-5 z-[100]">
-        <DropDown title={"More Products"} />
+        <DropDown title={`${products.length == 0 ? "Select Produtcs" : "More Products"}`} />
       </div>
       {products.length === 0 ? (
         <div className="w-full h-72 grid place-content-center text-center bg-[#fefae0] dark:bg-gray-900">
           <div className="p-5 space-y-7">
             <p className="font-bold text-3xl">Cart is Empty</p>
             <p className="text-lg w-80">
-              Please Click on the Top-Right Side <span className="text-red-500"> "More Products"</span>  Dropdown and Add
+              Please Click on the Top-Right Side <span className="text-red-500"> "Select Products"</span>  Dropdown and Add
               Some Items
             </p>
           </div>

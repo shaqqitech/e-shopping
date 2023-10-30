@@ -33,9 +33,9 @@ const CheckoutPage = () => {
 
   return (
     <div className="max-w-screen-lg mx-auto p-4">
-      <form onSubmit={formik.handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
+      <form onSubmit={formik.handleSubmit} className="bg-[#fefae0] dark:bg-gray-800 p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
-        <div className="mb-4">
+        <div className="mb-4 space-y-2">
           <label htmlFor="fullName" className="flex items-center">
             <FaUser className="mr-2" /> Full Name
           </label>
@@ -52,11 +52,112 @@ const CheckoutPage = () => {
             <div className="text-red-500">{formik.errors.fullName}</div>
           )}
         </div>
+        <div className="mb-4 space-y-2">
+          <label htmlFor="fullName" className="flex items-center">
+            <FaEnvelope className="mr-2" /> Email
+          </label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="w-full border p-2 rounded-md"
+          />
+          {formik.touched.email && formik.errors.email && (
+            <div className="text-red-500">{formik.errors.email}</div>
+          )}
+        </div>
+        <div className="mb-4 space-y-2">
+          <label htmlFor="fullName" className="flex items-center">
+            <FaPhone className="mr-2" /> Phone Number
+          </label>
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formik.values.phoneNumber}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="w-full border p-2 rounded-md"
+          />
+          {formik.touched.phoneNumber && formik.errors.phoneNumber && (
+            <div className="text-red-500">{formik.errors.phoneNumber}</div>
+          )}
+        </div>
+        <div className="mb-4 space-y-2">
+          <label htmlFor="fullName" className="flex items-center">
+            <FaMapMarkerAlt className="mr-2" /> Province
+          </label>
+          <input
+            type="text"
+            id="province"
+            name="province"
+            value={formik.values.province}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="w-full border p-2 rounded-md"
+          />
+          {formik.touched.province && formik.errors.province && (
+            <div className="text-red-500">{formik.errors.province}</div>
+          )}
+        </div>
+        <div className="mb-4 space-y-2">
+          <label htmlFor="fullName" className="flex items-center">
+            <FaCity className="mr-2" /> City
+          </label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={formik.values.city}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="w-full border p-2 rounded-md"
+          />
+          {formik.touched.city && formik.errors.city && (
+            <div className="text-red-500">{formik.errors.city}</div>
+          )}
+        </div>
+        <div className="mb-4 space-y-2">
+          <label htmlFor="fullName" className="flex items-center">
+            <FaAddressCard className="mr-2" /> Postal Code
+          </label>
+          <input
+            type="text"
+            id="postalCode"
+            name="postalCode"
+            value={formik.values.postalCode}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="w-full border p-2 rounded-md"
+          />
+          {formik.touched.postalCode && formik.errors.postalCode && (
+            <div className="text-red-500">{formik.errors.postalCode}</div>
+          )}
+        </div>
+        <div className="mb-4 space-y-2">
+          <label htmlFor="fullName" className="flex items-center">
+            <FaMapMarkerAlt className="mr-2" /> Delivery Address
+          </label>
+          <textarea
+            type="text"
+            id="deliveryAddress"
+            name="deliveryAddress"
+            value={formik.values.deliveryAddress}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="w-full border p-2 rounded-md"
+          />
+          {formik.touched.deliveryAddress && formik.errors.deliveryAddress && (
+            <div className="text-red-500">{formik.errors.deliveryAddress}</div>
+          )}
+        </div>
 
-        {/* Repeat the above pattern for other fields (email, phone, province, city, postalCode, deliveryAddress). */}
 
         <div className="mb-4">
-          <label htmlFor="paymentMethod" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="paymentMethod" className="mb-2 block text-sm font-medium ">
             Payment Method
           </label>
           <div className="flex items-center space-x-4">
@@ -69,7 +170,7 @@ const CheckoutPage = () => {
                 onChange={formik.handleChange}
                 className="mr-2"
               />
-              <FaCashRegister className="text-2xl" /> Cash on Delivery
+              <FaCashRegister className="text-2xl mx-1" /> Cash on Delivery
             </label>
             <label className="flex items-center">
               <input
@@ -80,7 +181,7 @@ const CheckoutPage = () => {
                 onChange={formik.handleChange}
                 className="mr-2"
               />
-              <FaCreditCard className="text-2xl" /> Online Payment
+              <FaCreditCard className="text-2xl mx-1" /> Online Payment
             </label>
           </div>
         </div>

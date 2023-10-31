@@ -1,10 +1,21 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from "react";
 import { FaRegHandshake, FaUndo, FaUserFriends, FaStar } from 'react-icons/fa';
+import Spinner from "../components/Spinner";
 
 const AboutUs = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 400);
+  }, []);
   return (
     <div className="bg-[#fefae0] dark:bg-gray-900 py-12">
-      <div className="container mx-auto px-4">
+      {loading ? (<Spinner />) : (
+        <>
+            <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-4 md:gap-8">
           {/* Section 1 */}
           <div className="bg-[#fefae0] dark:bg-gray-800 p-4 md:p-8 rounded-lg shadow-xl border-2 md:w-1/2">
@@ -51,6 +62,9 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
+        </>
+      )}
+  
     </div>
   );
 };

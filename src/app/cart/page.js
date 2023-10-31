@@ -6,11 +6,14 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DropDown from "../components/Dropdown";
 import CheckoutPage from "../components/CheckoutPage";
+import Spinner from "../components/Spinner";
 
 const Cart = () => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [netTotalPrice, setNetTotalPrice] = useState(0);
+  const [loading, setLoading] = useState(true);
+
 
   //Dicount on product
   const discount = 37;
@@ -41,6 +44,10 @@ const Cart = () => {
     //Net Total Price after minus discount price from totalPrice
     const discountAmount = (discount / 100) * totalPrice;
     const discountPrice = totalPrice - discountAmount;
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 400);
 
     setTotalQuantities(totalQuantities);
     setTotalPrice(totalPrice);
@@ -83,7 +90,9 @@ const Cart = () => {
 
   return (
     <main className="w-full p-5 md:p-10 space-y-5 bg-[#fefae0] dark:bg-gray-900 relative">
-      <div className="absolute top-2 right-5 z-[100]">
+      {loading ? (<Spinner />) : (
+        <>
+        <div className="absolute top-2 right-5 z-[100]">
         {/* DropDown Menu components */}
         <DropDown
           title={`${
@@ -202,6 +211,9 @@ const Cart = () => {
           </div>
         </div>
       )}
+        </>
+      )}
+      
     </main>
   );
 };

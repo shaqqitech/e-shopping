@@ -2,7 +2,7 @@
 import { UserAuth } from "@/context/AuthContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
 
 function LogIn() {

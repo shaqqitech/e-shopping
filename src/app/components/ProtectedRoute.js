@@ -1,16 +1,19 @@
-'use client'
-import { useRouter } from 'next/navigation'
-import { UserAuth } from '@/context/AuthContext'
+"use client";
 
-const ProtectedRoute = ({children}) => {
-    const { user } = UserAuth();
-    const router = useRouter();
+import { useRouter } from "next/navigation";
 
-    if(!user){
-        return router.push('/login') || router.push('/signup')
-    }else{
-        return children
-    }
-}
+import { UserAuth } from "@/context/AuthContext";
 
-export default ProtectedRoute
+const ProtectedRoute = ({ children }) => {
+  const { user } = UserAuth();
+
+  const router = useRouter();
+
+  if (!user) {
+    return router.push("/login") && router.push("/signup");
+  } else {
+    return children;
+  }
+};
+
+export default ProtectedRoute;

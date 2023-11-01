@@ -17,7 +17,7 @@ function SignUp() {
     e.preventDefault();
     try {
       await signUp(email, password);
-      router.push("/");
+      router.push("/login");
     } catch (error) {
       console.log(error);
     }

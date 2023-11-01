@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
   const router = useRouter();
 
   if (!user) {
-    return router.push("/login") && router.push("/signup");
+    return router.push("/signup");
   } else {
     return children;
   }

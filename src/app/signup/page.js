@@ -11,12 +11,6 @@ function SignUp() {
   const { user, signUp } = UserAuth();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 400);
-  }, []);
-
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -28,6 +22,12 @@ function SignUp() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 400);
+  }, []);
 
   return (
     <div className="min-h-2/3 p-10 flex items-center justify-center  bg-[#fefae0] dark:bg-gray-900">
@@ -83,10 +83,12 @@ function SignUp() {
               </button>
             </div>
             <h1 className=" mt-4 text-sm">
-              Don't have any account yet?{" "}
-              <Link href={"/login"} className="text-md font-semibold">
-                Log In
-              </Link>
+              Already has an account?{" "}
+              {!user && (
+                <Link href={"/login"} className="text-md font-semibold">
+                  Log In
+                </Link>
+              )}
             </h1>
           </form>
         </>

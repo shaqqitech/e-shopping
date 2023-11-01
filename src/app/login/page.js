@@ -82,10 +82,12 @@ function LogIn() {
               </button>
             </div>
             <h1 className=" mt-4 text-sm">
-              Don't have any account yet?{" "}
-              <Link href={"/signup"} className="text-md font-semibold">
-                Sign Up
-              </Link>
+            Don't have any account yet?{" "}
+              {!user && (
+                <Link href={"/signup"} className="text-md font-semibold">
+                  Sign Up
+                </Link>
+              )}
             </h1>
           </form>
         </>

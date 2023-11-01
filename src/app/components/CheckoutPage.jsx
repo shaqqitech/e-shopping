@@ -1,40 +1,90 @@
-'use client'
-import React from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { FaUser, FaEnvelope, FaPhone, FaCashRegister, FaCreditCard, FaMapMarkerAlt, FaCity, FaAddressCard } from 'react-icons/fa';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaCashRegister,
+  FaCreditCard,
+  FaMapMarkerAlt,
+  FaCity,
+  FaAddressCard,
+} from "react-icons/fa";
+import { useEffect } from "react";
 
 const CheckoutPage = () => {
-  const formik = useFormik({
-    initialValues: {
-      fullName: '',
-      email: '',
-      phoneNumber: '',
-      province: '',
-      city: '',
-      postalCode: '',
-      deliveryAddress: '',
-      paymentMethod: 'cashOnDelivery',
-    },
-    validationSchema: Yup.object({
-      fullName: Yup.string().required('Full name is required'),
-      email: Yup.string().email('Invalid email address').required('Email is required'),
-      phoneNumber: Yup.string().required('Phone number is required'),
-      province: Yup.string().required('Province is required'),
-      city: Yup.string().required('City is required'),
-      postalCode: Yup.string().required('Postal code is required'),
-      deliveryAddress: Yup.string().required('Delivery address is required'),
-    }),
-    onSubmit: (values) => {
-      // You can submit the form data to your backend here.
-      console.log('Form data submitted:', values);
-    },
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [province, setProvince] = useState("");
+  const [city, setCity] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [deliveryAddress, setDeliveryAddress] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("cashOnDelivery");
+  const [disabledButton, setDisabledButton] = useState(true); // Initially disable the button
+  const [errors, setErrors] = useState({
+    fullName: false,
+    email: false,
+    number: false,
+    province: false,
+    city: false,
+    postalCode: false,
+    deliveryAddress: false,
   });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    const isFieldEmpty = (value) => value.trim() === "";
+    
+    const fields = [
+      fullName,
+      email,
+      number,
+      province,
+      city,
+      postalCode,
+      deliveryAddress,
+    ];
+
+    const newErrors = {};
+
+    fields.forEach((field, index) => {
+      if (isFieldEmpty(field)) {
+        newErrors[Object.keys(errors)[index]] = true;
+      } else {
+        newErrors[Object.keys(errors)[index]] = false;
+      }
+    });
+
+    const allFieldsEmpty = fields.every((field) => isFieldEmpty(field));
+
+    setErrors(newErrors);
+
+    if (allFieldsEmpty) {
+      setDisabledButton(true);
+    } else {
+      setDisabledButton(false);
+    }
+  }, [fullName, email, number, province, city, postalCode, deliveryAddress]);
+
+  const togglePaymentMethod = () => {
+    if (paymentMethod === "cashOnDelivery") {
+      setPaymentMethod("onlinePayment");
+    } else {
+      setPaymentMethod("cashOnDelivery");
+    }
+  };
 
   return (
     <div className="max-w-screen-lg mx-auto p-4">
-      <form onSubmit={formik.handleSubmit} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+      >
         <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
         <div className="mb-4 space-y-2">
           <label htmlFor="fullName" className="flex items-center">
@@ -42,49 +92,36 @@ const CheckoutPage = () => {
           </label>
           <input
             type="text"
-            id="fullName"
-            name="fullName"
-            value={formik.values.fullName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.fullName && formik.errors.fullName && (
-            <div className="text-red-500">{formik.errors.fullName}</div>
-          )}
+          {errors.fullName && <div className="text-red-500">Full name is required.</div>}
         </div>
         <div className="mb-4 space-y-2">
-          <label htmlFor="fullName" className="flex items-center">
+          <label htmlFor="email" className="flex items-center">
             <FaEnvelope className="mr-2" /> Email
           </label>
           <input
-            type="text"
-            id="email"
-            name="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.email && formik.errors.email && (
-            <div className="text-red-500">{formik.errors.email}</div>
-          )}
+          {errors.email && <div className="text-red-500">Email is required.</div>}
         </div>
         <div className="mb-4 space-y-2">
           <label htmlFor="fullName" className="flex items-center">
             <FaPhone className="mr-2" /> Phone Number
           </label>
           <input
-            type="text"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={formik.values.phoneNumber}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            type="number"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.phoneNumber && formik.errors.phoneNumber && (
-            <div className="text-red-500">{formik.errors.phoneNumber}</div>
+          {errors.number && (
+            <div className="text-red-500">Phone number is required.</div>
           )}
         </div>
         <div className="mb-4 space-y-2">
@@ -93,15 +130,12 @@ const CheckoutPage = () => {
           </label>
           <input
             type="text"
-            id="province"
-            name="province"
-            value={formik.values.province}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={province}
+            onChange={(e) => setProvince(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.province && formik.errors.province && (
-            <div className="text-red-500">{formik.errors.province}</div>
+          {errors.province && (
+            <div className="text-red-500">Province name is required.</div>
           )}
         </div>
         <div className="mb-4 space-y-2">
@@ -110,32 +144,24 @@ const CheckoutPage = () => {
           </label>
           <input
             type="text"
-            id="city"
-            name="city"
-            value={formik.values.city}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.city && formik.errors.city && (
-            <div className="text-red-500">{formik.errors.city}</div>
-          )}
+          {errors.city && <div className="text-red-500">City name is required.</div>}
         </div>
         <div className="mb-4 space-y-2">
           <label htmlFor="fullName" className="flex items-center">
             <FaAddressCard className="mr-2" /> Postal Code
           </label>
           <input
-            type="text"
-            id="postalCode"
-            name="postalCode"
-            value={formik.values.postalCode}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            type="number"
+            value={postalCode}
+            onChange={(e) => setPostalCode(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.postalCode && formik.errors.postalCode && (
-            <div className="text-red-500">{formik.errors.postalCode}</div>
+          {errors.postalCode && (
+            <div className="text-red-500">Postal Code is required.</div>
           )}
         </div>
         <div className="mb-4 space-y-2">
@@ -144,31 +170,29 @@ const CheckoutPage = () => {
           </label>
           <textarea
             type="text"
-            id="deliveryAddress"
-            name="deliveryAddress"
-            value={formik.values.deliveryAddress}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={deliveryAddress}
+            onChange={(e) => setDeliveryAddress(e.target.value)}
             className="w-full border p-2 rounded-md bg-gray-300 dark:bg-gray-900"
           />
-          {formik.touched.deliveryAddress && formik.errors.deliveryAddress && (
-            <div className="text-red-500">{formik.errors.deliveryAddress}</div>
+          {errors.deliveryAddress && (
+            <div className="text-red-500">Delivery Address is required.</div>
           )}
         </div>
 
-
         <div className="mb-4">
-          <label htmlFor="paymentMethod" className="mb-2 block text-sm font-medium ">
+          <label
+            htmlFor="paymentMethod"
+            className="mb-2 block text-sm font-medium "
+          >
             Payment Method
           </label>
           <div className="flex items-center space-x-4">
             <label className="flex items-center">
               <input
                 type="radio"
-                name="paymentMethod"
                 value="cashOnDelivery"
-                checked={formik.values.paymentMethod === 'cashOnDelivery'}
-                onChange={formik.handleChange}
+                checked={paymentMethod === "cashOnDelivery"}
+                onChange={togglePaymentMethod}
                 className="mr-2"
               />
               <FaCashRegister className="text-2xl mx-1" /> Cash on Delivery
@@ -176,10 +200,9 @@ const CheckoutPage = () => {
             <label className="flex items-center">
               <input
                 type="radio"
-                name="paymentMethod"
                 value="onlinePayment"
-                checked={formik.values.paymentMethod === 'onlinePayment'}
-                onChange={formik.handleChange}
+                checked={paymentMethod === "onlinePayment"}
+                onChange={togglePaymentMethod}
                 className="mr-2"
               />
               <FaCreditCard className="text-2xl mx-1" /> Online Payment
@@ -188,10 +211,12 @@ const CheckoutPage = () => {
         </div>
 
         <Link
-          href={'/cart/placeorder'}
-          className=" bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 w-full grid place-content-center"
+          href={`${disabledButton ? "" : "/cart/placeorder"}`}
+          className={`${
+            disabledButton ? "bg-gray-400" : "bg-blue-500"
+          } text-white p-2 rounded-md hover:bg-blue-700 w-full grid place-content-center`}
         >
-          Place Order
+          {disabledButton ? "Fill all the fields" : "Place the order"}
         </Link>
       </form>
     </div>
